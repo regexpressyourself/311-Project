@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class Source {
+public class Parser {
     public String sourceCode= "";
     public char[] sourceArray;
 
-    public Source(String sourceCode) {
+    public Parser(String sourceCode) {
         this.sourceCode = sourceCode;
         this.sourceArray = sourceCode.toCharArray();
     }

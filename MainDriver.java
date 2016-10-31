@@ -3,7 +3,7 @@ public class MainDriver {
                 String originalSource = "for (int a = 0; a == 3; a++) { statement; statement;}";
                 String[] tokenArray;
 
-                Source source = new Source(originalSource);
+                Parser source = new Parser(originalSource);
 
                 tokenArray = source.getTokens();
 
