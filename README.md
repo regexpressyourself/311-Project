@@ -4,12 +4,12 @@ So the project centers around making a new language to operate on queues (assumi
 
 For this, we need:
 
-[ ] BNF syntax spec
+- [ ] BNF syntax spec
 
-[ ] Denotational semantics spec
+- [ ] Denotational semantics spec
 
-[x] Parser
+- [x] Parser
 
-[ ] Lexical Analyzer
+- [ ] Lexical Analyzer
 
-[ ] Pseudo-compiler that compiles our language down to java to be run (not sure if this is necessary or not)
+- [ ] Pseudo-compiler that compiles our language down to java to be run (not sure if this is necessary or not)
