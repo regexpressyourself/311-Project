@@ -1,26 +1,52 @@
 
 
-# Add
+# Add (Enqueue)
 
-    BNF for add goes here
+ADD 1
 
 
-# Remove
+# Remove (Dequeue)
 
-    BNF for remove goes here
+
+REMOVE     
 
 
 # Peek
 
-    BNF for peek goes here
+
+PEEK  
 
 
 # Get Length
 
-    BNF for getLength goes here
+
+LENGTH
 
 
 # Is Empty
 
-    BNF for isEmpty goes here
 
+EMPTY
+
+
+# Is Not Empty
+
+NOTEMPTY
+
+
+#View
+
+VIEW
+
+#IF
+
+- (________)
+- each IF statement can only have one line
+- Can only do one thing
+- If it fails the first round of statements then it would just go onto the next line
+
+
+
+------------------------------------------------------------------------------------------
+
+- Each line of code will have a semicolon at the end. 
