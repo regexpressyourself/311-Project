@@ -1,21 +1,24 @@
 #+OPTIONS: toc:nil
-* Add
-#+begin_src
-BNF for add goes here
-#+end_src
-* Remove
-#+begin_src
-BNF for remove goes here
-#+end_src
-* Peek
-#+begin_src
-BNF for peek goes here
-#+end_src
-* Get Length
-#+begin_src
-BNF for getLength goes here
-#+end_src
-* Is Empty
-#+begin_src
-BNF for isEmpty goes here
-#+end_src
+* BNF
+  #+begin_src
+<line>        ----> <expression>;
+
+<expression>  ----> ADD <element> |
+                    REMOVE        |
+                    PEEK          |
+                    LENGTH        |
+                    EMPTY         |
+                    NOT_EMPTY     |
+                    VIEW          |
+                    IF (<if_expr>)
+
+<if_expr>     ----> EMPTY         |
+                    NOT_EMPTY
+
+<element>     ----> <int>
+
+<int>         ----> '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' |
+
+  #+end_src
+* Denotational Semantics
+** To be done for <int>
