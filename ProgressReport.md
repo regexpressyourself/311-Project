@@ -69,11 +69,17 @@
 
 Come up with syntax for our language and write BNF/EBNF to specify it. Language should support all queue functions, including:
 
+-   [X] line
+-   [X] expression
 -   [X] Add
 -   [X] Remove
 -   [X] Peek
 -   [X] Get Length
 -   [X] Is Empty
+-   [X] Not Empty
+-   [X] view
+-   [X] If
+-   [X] element
 
 
 ## Create Denotational Semantics
