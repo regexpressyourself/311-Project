@@ -31,7 +31,7 @@ EMPTY
 
 # Is Not Empty
 
-NOTEMPTY
+NOT_EMPTY
 
 
 #View
@@ -49,4 +49,4 @@ VIEW
 
 ------------------------------------------------------------------------------------------
 
-- Each line of code will have a semicolon at the end. 
+- Each line of code will have a semicolon at the end.
