@@ -1,0 +1,21 @@
+#+OPTIONS: toc:nil
+* Add
+#+begin_src
+BNF for add goes here
+#+end_src
+* Remove
+#+begin_src
+BNF for remove goes here
+#+end_src
+* Peek
+#+begin_src
+BNF for peek goes here
+#+end_src
+* Get Length
+#+begin_src
+BNF for getLength goes here
+#+end_src
+* Is Empty
+#+begin_src
+BNF for isEmpty goes here
+#+end_src
