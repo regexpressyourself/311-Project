@@ -1,11 +1,20 @@
-#+OPTIONS: toc:nil
-| Assigned              | Todo (0% Done) | Doing (0% - 100% Done)                                       | Done (100% Done)              |
-|-----------------------+----------------+--------------------------------------------------------------+-------------------------------|
-| Sam, Ganesh, Mohommed |                |                                                              | Create BNF                    |
-| Sam, Ganesh, Mohommed |                |                                                              | Create Denotational Semantics |
-| Sam                   |                | Create Parser (90% done)                                     |                               |
-| Mohommed, Sam         |                | Create Lexical Analyzer (20% done)                           |                               |
-| Ganesh                |                | Create Pseudo-compiler/Queue class implementation (50% done) |                               |
+#+OPTIONS: toc:nil author:nil date:nil
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+
+#+TITLE: Progress Report
+Sam Messina
+
+Ganesh Koripali
+
+Mohammed Abdulkadir
+
+| Assigned              | Todo (0%) | Doing (0% - 100%)                  | Done (100%)            |
+|-----------------------+-----------+------------------------------------+------------------------|
+| Sam, Ganesh, Mohammed |           |                                    | BNF                    |
+| Sam, Ganesh, Mohammed |           |                                    | Denotational Semantics |
+| Sam                   |           | Create Parser (90% done)           |                        |
+| Mohommed, Sam         |           | Create Lexical Analyzer (20% done) |                        |
+| Ganesh                |           | Create Pseudo-compiler)            |                        |
 
 * Todo specifics
 ** Create BNF

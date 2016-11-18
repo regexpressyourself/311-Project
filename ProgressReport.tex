@@ -1,0 +1,96 @@
+% Created 2016-11-18 Fri 17:11
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\date{}
+\title{Progress Report}
+\hypersetup{
+ pdfauthor={zookeeprr},
+ pdftitle={Progress Report},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 9.0)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+Sam Messina
+
+Ganesh Koripali
+
+Mohammed Abdulkadir
+
+\begin{center}
+\begin{tabular}{llll}
+Assigned & Todo (0\%) & Doing (0\% - 100\%) & Done (100\%)\\
+\hline
+Sam, Ganesh, Mohammed &  &  & BNF\\
+Sam, Ganesh, Mohammed &  &  & Denotational Semantics\\
+Sam &  & Create Parser (90\% done) & \\
+Mohommed, Sam &  & Create Lexical Analyzer (20\% done) & \\
+Ganesh &  & Create Pseudo-compiler) & \\
+\end{tabular}
+\end{center}
+
+\section{Todo specifics}
+\label{sec:orga40c632}
+\subsection{Create BNF}
+\label{sec:org4112f6f}
+Come up with syntax for our language and write BNF/EBNF to specify it. Language should support all queue functions, including:
+\begin{itemize}
+\item $\boxtimes$ line
+\item $\boxtimes$ expression
+\item $\boxtimes$ Add
+\item $\boxtimes$ Remove
+\item $\boxtimes$ Peek
+\item $\boxtimes$ Get Length
+\item $\boxtimes$ Is Empty
+\item $\boxtimes$ Not Empty
+\item $\boxtimes$ view
+\item $\boxtimes$ If
+\item $\boxtimes$ element
+\end{itemize}
+\subsection{Create Denotational Semantics}
+\label{sec:orgc2e3225}
+Write a set of denotaional semantics detailing semantics of queue creation and function calls
+\subsection{Create Parser}
+\label{sec:orgc6a0c75}
+Create a parser that will run through source code and return a list of all valid tokens found. Parser will:
+\begin{itemize}
+\item $\boxtimes$ Take in the source code of the program
+\item $\square$ Extracts Tokens
+\item $\boxtimes$ Return an array of tokens for the program
+\end{itemize}
+\subsection{Create Lexical Analyzer}
+\label{sec:orgad028c9}
+Create a lexical analyzer that:
+\begin{itemize}
+\item $\boxtimes$ Takes its input from our parser
+\item $\square$ Checks the syntax against our BNF
+\item $\square$ Checks semantics against denotational semantic rules
+\item $\square$ Evaluates action to be taken
+\item $\square$ Passes instructions to compiler to preform actions
+\end{itemize}
+\subsection{Create Pseudo Compiler}
+\label{sec:org1762bbd}
+Runs commands as specified by the lexical analyzer. This includes:
+\begin{itemize}
+\item $\boxtimes$ Maintain state of program while lexical analyzer is working
+\item $\square$ Take instructions from analyzer to adjust state and the queue
+\item $\boxtimes$ Preform instructions using Java
+\item $\boxtimes$ Run program
+\end{itemize}
+\end{document}
