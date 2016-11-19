@@ -12,7 +12,7 @@ Mohammed Abdulkadir
 |-----------------------+-----------+------------------------------------+------------------------|
 | Sam, Ganesh, Mohammed |           |                                    | BNF                    |
 | Sam, Ganesh, Mohammed |           |                                    | Denotational Semantics |
-| Sam                   |           | Create Parser (90% done)           |                        |
+| Sam                   |           |                                    | Create Parser          |
 | Mohommed, Sam         |           | Create Lexical Analyzer (20% done) |                        |
 | Ganesh                |           | Create Pseudo-compiler)            |                        |
 
@@ -35,7 +35,7 @@ Mohammed Abdulkadir
 ** Create Parser
    Create a parser that will run through source code and return a list of all valid tokens found. Parser will:
 - [X] Take in the source code of the program
-- [ ] Extracts Tokens
+- [X] Extracts Tokens
 - [X] Return an array of tokens for the program
 ** Create Lexical Analyzer 
    Create a lexical analyzer that:

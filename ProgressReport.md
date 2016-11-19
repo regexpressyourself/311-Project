@@ -1,3 +1,9 @@
+Sam Messina
+
+Ganesh Koripali
+
+Mohammed Abdulkadir
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -13,34 +19,34 @@
 <thead>
 <tr>
 <th scope="col" class="org-left">Assigned</th>
-<th scope="col" class="org-left">Todo (0% Done)</th>
-<th scope="col" class="org-left">Doing (0% - 100% Done)</th>
-<th scope="col" class="org-left">Done (100% Done)</th>
+<th scope="col" class="org-left">Todo (0%)</th>
+<th scope="col" class="org-left">Doing (0% - 100%)</th>
+<th scope="col" class="org-left">Done (100%)</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td class="org-left">Sam, Ganesh, Mohommed</td>
+<td class="org-left">Sam, Ganesh, Mohammed</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">Create BNF</td>
+<td class="org-left">BNF</td>
 </tr>
 
 
 <tr>
-<td class="org-left">Sam, Ganesh, Mohommed</td>
+<td class="org-left">Sam, Ganesh, Mohammed</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">Create Denotational Semantics</td>
+<td class="org-left">Denotational Semantics</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Sam</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">Create Parser (90% done)</td>
 <td class="org-left">&#xa0;</td>
+<td class="org-left">Create Parser</td>
 </tr>
 
 
@@ -55,7 +61,7 @@
 <tr>
 <td class="org-left">Ganesh</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">Create Pseudo-compiler/Queue class implementation (50% done)</td>
+<td class="org-left">Create Pseudo-compiler)</td>
 <td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
@@ -92,7 +98,7 @@ Write a set of denotaional semantics detailing semantics of queue creation and f
 Create a parser that will run through source code and return a list of all valid tokens found. Parser will:
 
 -   [X] Take in the source code of the program
--   [ ] Extracts Tokens
+-   [X] Extracts Tokens
 -   [X] Return an array of tokens for the program
 
 
