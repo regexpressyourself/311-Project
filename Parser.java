@@ -1,9 +1,17 @@
 import java.util.*;
 
 public class Parser {
-    public String sourceCode= "";
-    public char[] sourceArray;
+    public String       sourceCode;
+    public char[]       sourceArray;
+    public char         currentChar;
+    public List<String> tokenArray;
+    public String       nextToken;
+    public String       finalTokenArray[];
 
+    public Parser() {
+        this.sourceCode = "";
+        this.sourceArray = sourceCode.toCharArray();
+    }
     public Parser(String sourceCode) {
         this.sourceCode = sourceCode;
         this.sourceArray = sourceCode.toCharArray();
@@ -11,15 +19,13 @@ public class Parser {
 
     public String[] getTokens() {
 
-
-        char currentChar;
-        List<String> tokenArray = new ArrayList<String>();
-        String nextToken = "";
-
+        tokenArray = new ArrayList<String>();
+        nextToken  = "";
 
         for (int i = 0; i < sourceCode.length(); i++){
             currentChar = sourceCode.charAt(i);
-            if (!(Character.isSpaceChar(currentChar))) {
+            if (!(Character.isSpaceChar(currentChar) || currentChar == '\n')) {
+
 
                 if (Character.isDigit(currentChar)) {
                     nextToken = getNextNumber(sourceArray, i);
@@ -40,7 +46,7 @@ public class Parser {
             }// end if(!is space)
         } //end for loop
 
-        String finalTokenArray[] = new String[tokenArray.size()];
+        finalTokenArray = new String[tokenArray.size()];
         finalTokenArray = tokenArray.toArray(finalTokenArray);
         return finalTokenArray;
 
@@ -48,62 +54,33 @@ public class Parser {
 
     public static boolean isSymbol(char[] charArray, int currentIndex){
         switch (charArray[currentIndex]) {
-            case '(':
-            case ')':
-            case ';':
-            case '{':
-            case '}':
-            case '%':
-            case '+':
-            case '-':
-            case '/':
-            case '=':
-            case '<':
-            case '>':
-                return true;
-            default:
-                return false;
+        case '(':
+        case ')':
+        case ';':
+            return true;
+        default:
+            return false;
         }
     } //end isSymbol
 
     public static String getNextSymbol(char[] charArray, int currentIndex) {
         String returnString = "";
         switch (charArray[currentIndex]) {
-            case '(':
-            case ')':
-            case ';':
-            case '{':
-            case '}':
-                returnString =  String.valueOf(charArray[currentIndex]);
-                break;
-            case '%':
-            case '/':
-            case '+':
-            case '-':
-            case '=':
-            case '<':
-            case '>':
-                returnString =  String.valueOf(charArray[currentIndex]);
-
-                if (isSymbol(charArray, currentIndex+1)                   &&(
-                        String.valueOf(charArray[currentIndex+1]).equals("=") ||
-                                String.valueOf(charArray[currentIndex+1]).equals("+") ||
-                                String.valueOf(charArray[currentIndex+1]).equals("-") ))
-                {
-
-                    returnString +=  String.valueOf(charArray[currentIndex+1]);
-                }
-
-                break;
-            default:
-                break;
+        case '(':
+        case ')':
+        case ';':
+            returnString =  String.valueOf(charArray[currentIndex]);
+            break;
+        default:
+            break;
         }
         return returnString;
     }
     public static String getNextWord(char[] charArray, int currentIndex){
         String nextWord = "";
         while (Character.isLetter(charArray[currentIndex]) ||
-                Character.isDigit(charArray[currentIndex])){
+               Character.isDigit (charArray[currentIndex])  ||
+               charArray[currentIndex] == '_'){
             nextWord += charArray[currentIndex++];
         }
         return nextWord;
