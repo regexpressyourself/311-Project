@@ -34,7 +34,7 @@ public class LexicalAnalyzer{
             case "VIEW":
                 break;
             case "IF":
-                handleIf(i);
+                handleIf();
                 break;
             default:
                 break;
