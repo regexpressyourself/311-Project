@@ -8,7 +8,8 @@ public class Queue {
         String         line;
         String         source;
         String[]       tokenArray;
-        Parser         parser;
+        Parser          parser;
+        LexicalAnalyzer le;
 
         source = "";
 
@@ -43,6 +44,9 @@ public class Queue {
             System.exit(1);
         }
 
+        /*
+          - Parser -
+        */
         parser = new Parser(source);
         tokenArray = parser.getTokens();
 
@@ -51,16 +55,15 @@ public class Queue {
         }
 
         /*
-
           - Lexical Analysis -
-          LexicalAnalyzer le = new LexicalAnalyzer(tokenArray);
-          le.analyze();
+        */
+          le = new LexicalAnalyzer(tokenArray);
+          le.analyzeTokens();
 
           - Compiler -
           OurCompiler oc = new OurCompiler(tokenArray);
           new.run();
 
-        */
 
     }
 
