@@ -11,12 +11,22 @@ public class QueueImplementation<E> extends ArrayDeque {
      * size()       - returns the number of elements in the queue
      */
 
-    public String view() {
-        String prettyView;
-        /**
-         * TODO - write a method to iterate through the queue and print it in a friendly way
-         */
-        return prettyView;
+    public void view() {
+        String    prettyView = "";
+        Object[] arrayQueue = this.toArray();
+
+        for (int i = 0; i < arrayQueue.length; i++) {
+            prettyView += arrayQueue[i] + " <- ";
+        }
+        System.out.println(prettyView);
+    }
+
+    public void showFirst(Integer firstElement) {
+        System.out.println("The first element is: " + firstElement);
+
+    }
+    public void getLength(int length) {
+        System.out.println("The length is: " + length);
     }
 
     public boolean isEmpty() {
