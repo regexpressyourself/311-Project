@@ -43,6 +43,7 @@ public class LexicalAnalyzer{
                 queue.clear();
                 break;
             default:
+                syntaxError();
                 break;
 
             }
@@ -76,5 +77,7 @@ public class LexicalAnalyzer{
         }
     }
     public static void syntaxError() {
+        System.out.println("Syntax error on token: " + tokenArray[i]);
+        System.exit(1);
     }
 }
