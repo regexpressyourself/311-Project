@@ -31,31 +31,39 @@ public class LexicalAnalyzer{
                     if (Integer.parseInt(tokenArray[i+1]) >= 0  &&
                         Integer.parseInt(tokenArray[i+1]) <= 11) {
                         javaCode += "queue.add("+Integer.parseInt(tokenArray[++i])+");\n";
+                        System.out.println("Next line of execution: queue.add("+Integer.parseInt(tokenArray[i])+");\n");
                     }
                     break;
                 case "REMOVE":
                     javaCode += "queue.remove();\n";
+                    System.out.println("Next line of execution: queue.remove();\n");
                     break;
                 case "PEEK":
                     javaCode += "queue.showFirst((Integer) queue.peek());\n";
+                    System.out.println("Next line of execution: queue.showFirst((Integer) queue.peek());\n");
                     break;
                 case "LENGTH":
                     javaCode += "queue.getLength(queue.size());\n";
+                    System.out.println("Next line of execution: queue.getLength(queue.size());\n");
                     break;
                 case "EMPTY":
-                    javaCode += "queue.isEmpty();\n";
+                    javaCode += "queue.isempty();\n";
+                    System.out.println("Next line of execution: queue.isempty();\n");
                     break;
                 case "NOT_EMPTY":
                     javaCode += "queue.notEmpty();\n";
+                    System.out.println("Next line of execution: queue.notEmpty();\n");
                     break;
                 case "VIEW":
                     javaCode += "queue.view();\n";
+                    System.out.println("Next line of execution: queue.view();\n");
                     break;
                 case "IF":
                     handleIf();
                     break;
                 case "CLEAR":
                     javaCode += "queue.clear();\n";
+                    System.out.println("Next line of execution: queue.clear();\n");
                     break;
                 default:
                     syntaxError();
