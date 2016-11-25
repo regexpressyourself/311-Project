@@ -4,9 +4,11 @@ public class Parser {
     public String       sourceCode;
     public char[]       sourceArray;
     public char         currentChar;
-    public List<String> tokenArray;
-    public String       nextToken;
+    public static List<String> tokenArray;
+    public static String       nextToken;
     public String       finalTokenArray[];
+    static QueueImplementation<Integer> queue = new QueueImplementation<Integer>();
+    static int ifArgCount = 0;
 
     public Parser() {
         this.sourceCode = "";
@@ -19,13 +21,16 @@ public class Parser {
 
     public String[] getTokens() {
 
+        boolean executeIf = false;
+        boolean inIf = false;
+        boolean addNextToken = false;
+        boolean ignoreNextToken = false;
         tokenArray = new ArrayList<String>();
         nextToken  = "";
 
         for (int i = 0; i < sourceCode.length(); i++){
             currentChar = sourceCode.charAt(i);
             if (!(Character.isSpaceChar(currentChar) || currentChar == '\n')) {
-
 
                 if (Character.isDigit(currentChar)) {
                     nextToken = getNextNumber(sourceArray, i);
@@ -42,6 +47,139 @@ public class Parser {
                     nextToken = getNextSymbol(sourceArray, i);
                     i += nextToken.length() - 1;
                 }
+
+
+
+                System.out.println("Got token " + nextToken);
+
+                if (ignoreNextToken) {
+                    ignoreNextToken = false;
+                }
+                else if (inIf) {
+                    ifArgCount += 1;
+                    if (ifArgCount == 2) {
+                        switch (nextToken) {
+                        case "EMPTY":
+                            if (queue.isEmpty()) {
+                                executeIf = true;
+                            }
+                            else {
+                                executeIf = false;
+                            }
+                            break;
+                        case "NOT_EMPTY":
+                            if (queue.notEmpty()) {
+                                executeIf = true;
+                            }
+                            else {
+                                executeIf = false;
+                            }
+                            break;
+                        }
+                    }
+                    else if (ifArgCount == 5 || addNextToken) {
+                        if (executeIf) {
+                            if (addNextToken) {
+                                addNextToken = false;
+                                ignoreNextToken = true;
+                                executeIf = false;
+                                inIf = false;
+                                queue.add(nextToken);
+                            }
+                            else {
+                                switch (nextToken) {
+                                case "ADD":
+                                    addNextToken = true;
+                                    break;
+                                case "REMOVE":
+                                    queue.remove();
+                                    inIf = false;
+                                    ignoreNextToken = true;
+                                    break;
+                                case "PEEK":
+                                    queue.showFirst((String) queue.peek());
+                                    ignoreNextToken = true;
+                                    inIf = false;
+                                    break;
+                                case "LENGTH":
+                                    queue.getLength(queue.size());
+                                    ignoreNextToken = true;
+                                    inIf = false;
+                                    break;
+                                case "VIEW":
+                                    queue.view();
+                                    ignoreNextToken = true;
+                                    inIf = false;
+                                    break;
+                                case "CLEAR":
+                                    queue.clear();
+                                    inIf = false;
+                                    ignoreNextToken = true;
+                                    break;
+                                default:
+                                    syntaxError();
+                                    break;
+
+                                }// end switch
+                                executeIf = false;
+                            } // end else
+                        }
+                    }
+                    else if (ifArgCount == 5) {
+                        ifArgCount = 0;
+                        inIf = false;
+                        System.out.println("OUTIFF");
+                    }
+                    else if (ifArgCount == 6) {
+                        ifArgCount = 0;
+                        inIf = false;
+                        System.out.println("OUTIFF");
+                    }
+                }
+                else {
+
+                    if (addNextToken) {
+                        addNextToken = false;
+                        ignoreNextToken = true;
+                        queue.add(nextToken);
+                    }
+                    else {
+                        switch (nextToken) {
+                        case "ADD":
+                            addNextToken = true;
+                            break;
+                        case "REMOVE":
+                            queue.remove();
+                            ignoreNextToken = true;
+                            break;
+                        case "PEEK":
+                            queue.showFirst((String) queue.peek());
+                            ignoreNextToken = true;
+                            break;
+                        case "LENGTH":
+                            queue.getLength(queue.size());
+                            ignoreNextToken = true;
+                            break;
+                        case "VIEW":
+                            queue.view();
+                            ignoreNextToken = true;
+                            break;
+                        case "IF":
+                            inIf = true;
+                            System.out.println("INIFF");
+                            ifArgCount = 0;
+                            break;
+                        case "CLEAR":
+                            queue.clear();
+                            ignoreNextToken = true;
+                            break;
+                        default:
+                            syntaxError();
+                            break;
+
+                        }
+                    }
+                }
                 tokenArray.add(nextToken);
             }// end if(!is space)
         } //end for loop
@@ -51,6 +189,11 @@ public class Parser {
         return finalTokenArray;
 
     }// end getTokens
+
+    public static void syntaxError() {
+        System.out.println("Syntax error on token: " + nextToken);
+        System.exit(1);
+    }
 
     public static boolean isSymbol(char[] charArray, int currentIndex){
         switch (charArray[currentIndex]) {

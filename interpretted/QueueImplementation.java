@@ -21,7 +21,7 @@ public class QueueImplementation<E> extends ArrayDeque {
         System.out.println(prettyView);
     }
 
-    public void showFirst(Integer firstElement) {
+    public void showFirst(String firstElement) {
         System.out.println("The first element is: " + firstElement);
 
     }
