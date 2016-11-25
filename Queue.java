@@ -50,9 +50,11 @@ public class Queue {
         parser = new Parser(source);
         tokenArray = parser.getTokens();
 
+        System.out.printf("############## Parsing.... #################\n");
         for (String token : tokenArray) {
             System.out.printf("Next token is %s\n", token);
         }
+        System.out.printf("\n\n############## Analyzing.... #################\n");
 
         /*
           - Lexical Analysis -
@@ -60,9 +62,11 @@ public class Queue {
           le = new LexicalAnalyzer(tokenArray);
           le.analyzeTokens();
 
+          /*
           - Compiler -
           OurCompiler oc = new OurCompiler(tokenArray);
-          new.run();
+          */
+
 
 
     }
