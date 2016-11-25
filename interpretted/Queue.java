@@ -8,7 +8,7 @@ public class Queue {
         String         line;
         String         source;
         String[]       tokenArray;
-        Parser          parser;
+        Interpretter   interpretter;
 
         source = "";
 
@@ -46,8 +46,8 @@ public class Queue {
         /*
           - Parser/Analyzer/Interpreter -
         */
-        parser = new Parser(source);
-        tokenArray = parser.getTokens();
+        interpretter = new Interpretter(source);
+        tokenArray = interpretter.getTokens();
 
 
 

@@ -12,6 +12,7 @@ public class QueueImplementation<E> extends ArrayDeque {
      */
 
     public void view() {
+        // view the queue
         String    prettyView = "";
         Object[] arrayQueue = this.toArray();
 
@@ -22,10 +23,12 @@ public class QueueImplementation<E> extends ArrayDeque {
     }
 
     public void showFirst(String firstElement) {
+        // our version of peek() that prints
         System.out.println("The first element is: " + firstElement);
 
     }
     public void getLength(int length) {
+        // our version of size() that prints
         System.out.println("The length is: " + length);
     }
 
