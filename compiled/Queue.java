@@ -62,11 +62,16 @@ public class Queue {
           le = new LexicalAnalyzer(tokenArray);
           le.analyzeTokens();
 
+          System.out.printf("\n\n############## Compiling.... #################\n");
           /*
-          - Compiler -
-          OurCompiler oc = new OurCompiler(tokenArray);
+            - Compiler -
           */
 
+          OurCompiler oc = new OurCompiler();
+          oc.compileSource();
+
+          System.out.printf("\n\n############## Done! #################\n");
+          System.out.printf("Your file is compiled. You can run it by running: \n\n\tjava output\n\nHappy queueing!\n");
 
 
     }
