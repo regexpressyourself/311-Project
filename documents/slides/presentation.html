@@ -9,7 +9,7 @@
 </style>
 <link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
 
-<link rel="stylesheet" href="./reveal.js/css/theme/serif.css" id="theme"/>
+<link rel="stylesheet" href="./reveal.js/css/theme/blood.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -28,17 +28,30 @@
 <div class="slides">
 
 <section>
-<section id="slide-org400753c">
-<h2 id="org400753c">The Queue Programming Language</h2>
+<section id="slide-org4dcf6f0">
+<h2 id="org4dcf6f0">The Queue Programming Language</h2>
 <p>
 A programming language to allow simple queue manipulation
+</p>
+
+<hr  />
+<p>
+Sam Messina
+</p>
+
+<p>
+Ganesh Koripalli
+</p>
+
+<p>
+Mohammed Abdulkadir
 </p>
 
 </section>
 </section>
 <section>
-<section id="slide-org86308b3">
-<h2 id="org86308b3">Features</h2>
+<section id="slide-orga0bab1c">
+<h2 id="orga0bab1c">Features</h2>
 <ol>
 <li>Manipulate a single queue per program</li>
 <li>Queue elements may be integers from 0 - 10</li>
@@ -54,56 +67,56 @@ A programming language to allow simple queue manipulation
 </section>
 </section>
 <section>
-<section id="slide-org7ba273b">
-<h2 id="org7ba273b">Available Methods</h2>
-<div class="outline-text-2" id="text-org7ba273b">
+<section id="slide-orgd582350">
+<h2 id="orgd582350">Available Methods</h2>
+<div class="outline-text-2" id="text-orgd582350">
 </div></section>
-<section id="slide-org02a0d27">
-<h3 id="org02a0d27">ADD</h3>
+<section id="slide-orga72f869">
+<h3 id="orga72f869">ADD</h3>
 <p>
 ADD will add an element to the back of the queue
 </p>
 </section>
-<section id="slide-orgd6cd129">
-<h3 id="orgd6cd129">REMOVE</h3>
+<section id="slide-org193397f">
+<h3 id="org193397f">REMOVE</h3>
 <p>
 REMOVE will remove an element to the front of the queue
 </p>
 </section>
-<section id="slide-orgd05d182">
-<h3 id="orgd05d182">PEEK</h3>
+<section id="slide-org59e2572">
+<h3 id="org59e2572">PEEK</h3>
 <p>
 PEEK will display the element at the front of the queue
 </p>
 </section>
-<section id="slide-org5976eca">
-<h3 id="org5976eca">LENGTH</h3>
+<section id="slide-orgb6efd01">
+<h3 id="orgb6efd01">LENGTH</h3>
 <p>
 LENGTH will display the current length of the queue
 </p>
 </section>
-<section id="slide-orgbb94cea">
-<h3 id="orgbb94cea">EMPTY</h3>
+<section id="slide-orgae89593">
+<h3 id="orgae89593">EMPTY</h3>
 <ul>
 <li>Boolean expression to be placed inside an IF statement.</li>
 <li>Evaluates to true if the queue is empty.</li>
 
 </ul>
 </section>
-<section id="slide-org3386f3a">
-<h3 id="org3386f3a">NOT_EMPTY</h3>
+<section id="slide-org7f49f7d">
+<h3 id="org7f49f7d">NOT_EMPTY</h3>
 <p>
 Works like EMPTY only evaluates to true if the queue is not empty.
 </p>
 </section>
-<section id="slide-orgd940a6e">
-<h3 id="orgd940a6e">VIEW</h3>
+<section id="slide-org3fb584c">
+<h3 id="org3fb584c">VIEW</h3>
 <p>
 Shows the queue in its current state
 </p>
 </section>
-<section id="slide-orgdf47682">
-<h3 id="orgdf47682">IF ()</h3>
+<section id="slide-orga5e2f74">
+<h3 id="orga5e2f74">IF ()</h3>
 <ul>
 <li>Can only take EMPTY or NOT_EMPTY as an argument.</li>
 <li>The line following the IF statement will be evaluated only if the IF statement is true.</li>
@@ -113,8 +126,8 @@ Shows the queue in its current state
 </section>
 </section>
 <section>
-<section id="slide-orga18fc56">
-<h2 id="orga18fc56">BNF</h2>
+<section id="slide-org62a69cf">
+<h2 id="org62a69cf">BNF</h2>
 <div class="org-src-container">
 
 <pre  class="src src-bash">&lt;line&gt;        ----&gt; &lt;expression&gt;;
@@ -140,12 +153,12 @@ Shows the queue in its current state
 </section>
 </section>
 <section>
-<section id="slide-orgdb46206">
-<h2 id="orgdb46206">How It Works - Compiled Version</h2>
-<div class="outline-text-2" id="text-orgdb46206">
+<section id="slide-org4f82b5e">
+<h2 id="org4f82b5e">How It Works - Compiled Version</h2>
+<div class="outline-text-2" id="text-org4f82b5e">
 </div></section>
-<section id="slide-org83878f4">
-<h3 id="org83878f4">Get The Tokens</h3>
+<section id="slide-orgb9ca2cd">
+<h3 id="orgb9ca2cd">Get The Tokens</h3>
 <ol>
 <li>Read in a text file to a string</li>
 <li>Pass the source code string to Parser.java</li>
@@ -155,8 +168,8 @@ Shows the queue in its current state
 </ol>
 
 </section>
-<section id="slide-orgd5219b5">
-<h4 id="orgd5219b5">Output</h4>
+<section id="slide-org717eed8">
+<h4 id="org717eed8">Output</h4>
 <pre  class="example">
 ############## Parsing.... #################
 Next token is ADD
@@ -200,8 +213,8 @@ Next token is ;
 </pre>
 
 </section>
-<section id="slide-org3702485">
-<h3 id="org3702485">Analyze The Tokens</h3>
+<section id="slide-org8837356">
+<h3 id="org8837356">Analyze The Tokens</h3>
 <p>
 This stage combines token analysis and writing to "machine code" (java)
 </p>
@@ -220,8 +233,8 @@ This stage combines token analysis and writing to "machine code" (java)
 </ol>
 
 </section>
-<section id="slide-org55f2235">
-<h4 id="org55f2235">Output</h4>
+<section id="slide-org8c8ef77">
+<h4 id="org8c8ef77">Output</h4>
 <pre  class="example">
 ############## Analyzing.... #################
 Next line of execution: queue.add(1);
@@ -250,8 +263,8 @@ Next line of execution: queue.view();
 </pre>
 
 </section>
-<section id="slide-org1524701">
-<h3 id="org1524701">Compile The Program</h3>
+<section id="slide-org9db75fe">
+<h3 id="org9db75fe">Compile The Program</h3>
 <ol>
 <li>output.java is compiled to output.class using Runtime.exec().</li>
 <li>output.java is deleted, leaving only output.class</li>
@@ -260,8 +273,8 @@ Next line of execution: queue.view();
 </ol>
 
 </section>
-<section id="slide-org3b88de7">
-<h4 id="org3b88de7">Output</h4>
+<section id="slide-org3b5958b">
+<h4 id="org3b5958b">Output</h4>
 <pre  class="example">
 ############## Compiling.... #################
 
@@ -275,8 +288,8 @@ Happy queueing!
 </pre>
 
 </section>
-<section id="slide-orgfe83264">
-<h3 id="orgfe83264">Use Case Example</h3>
+<section id="slide-orgdf4bf80">
+<h3 id="orgdf4bf80">Use Case Example</h3>
 <div class="org-src-container">
 
 <pre  class="src src-bash">$ java Queue myfile.queue 
@@ -287,12 +300,12 @@ $ java output
 </section>
 </section>
 <section>
-<section id="slide-org71c9a61">
-<h2 id="org71c9a61">How It Works - Compiled Version</h2>
-<div class="outline-text-2" id="text-org71c9a61">
+<section id="slide-orge7b495a">
+<h2 id="orge7b495a">How It Works - Interpreted Version</h2>
+<div class="outline-text-2" id="text-orge7b495a">
 </div></section>
-<section id="slide-org9e0c771">
-<h3 id="org9e0c771">All The Steps At Once</h3>
+<section id="slide-org330acd4">
+<h3 id="org330acd4">All The Steps At Once</h3>
 <ul>
 <li>The logic behind the interpreted version is nearly identical to that of the compiled version.</li>
 
@@ -303,8 +316,8 @@ $ java output
 </ul>
 
 </section>
-<section id="slide-orgbb6b0fb">
-<h3 id="orgbb6b0fb">The Giant Loop</h3>
+<section id="slide-org601bf70">
+<h3 id="org601bf70">The Giant Loop</h3>
 <ul>
 <li>Like the compiled version, our source code is translated into a string an passed to our Interpreter.java</li>
 
