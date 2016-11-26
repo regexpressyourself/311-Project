@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(zookeeprr)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/serif.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-org400753c">
+<h2 id="org400753c">The Queue Programming Language</h2>
+<p>
+A programming language to allow simple queue manipulation
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org86308b3">
+<h2 id="org86308b3">Features</h2>
+<ol>
+<li>Manipulate a single queue per program</li>
+<li>Queue elements may be integers from 0 - 10</li>
+<li>All major queue methods are implemented
+<ol>
+<li>Two versions of our language: compiled and interpreted</li>
+
+</ol></li>
+<li>Displays parsing and analysis data in real time as it runs</li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-org7ba273b">
+<h2 id="org7ba273b">Available Methods</h2>
+<div class="outline-text-2" id="text-org7ba273b">
+</div></section>
+<section id="slide-org02a0d27">
+<h3 id="org02a0d27">ADD</h3>
+<p>
+ADD will add an element to the back of the queue
+</p>
+</section>
+<section id="slide-orgd6cd129">
+<h3 id="orgd6cd129">REMOVE</h3>
+<p>
+REMOVE will remove an element to the front of the queue
+</p>
+</section>
+<section id="slide-orgd05d182">
+<h3 id="orgd05d182">PEEK</h3>
+<p>
+PEEK will display the element at the front of the queue
+</p>
+</section>
+<section id="slide-org5976eca">
+<h3 id="org5976eca">LENGTH</h3>
+<p>
+LENGTH will display the current length of the queue
+</p>
+</section>
+<section id="slide-orgbb94cea">
+<h3 id="orgbb94cea">EMPTY</h3>
+<ul>
+<li>Boolean expression to be placed inside an IF statement.</li>
+<li>Evaluates to true if the queue is empty.</li>
+
+</ul>
+</section>
+<section id="slide-org3386f3a">
+<h3 id="org3386f3a">NOT_EMPTY</h3>
+<p>
+Works like EMPTY only evaluates to true if the queue is not empty.
+</p>
+</section>
+<section id="slide-orgd940a6e">
+<h3 id="orgd940a6e">VIEW</h3>
+<p>
+Shows the queue in its current state
+</p>
+</section>
+<section id="slide-orgdf47682">
+<h3 id="orgdf47682">IF ()</h3>
+<ul>
+<li>Can only take EMPTY or NOT_EMPTY as an argument.</li>
+<li>The line following the IF statement will be evaluated only if the IF statement is true.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga18fc56">
+<h2 id="orga18fc56">BNF</h2>
+<div class="org-src-container">
+
+<pre  class="src src-bash">&lt;line&gt;        ----&gt; &lt;expression&gt;;
+
+&lt;expression&gt;  ----&gt; ADD &lt;element&gt; |
+                    REMOVE        |
+                    PEEK          |
+                    LENGTH        |
+                    EMPTY         |
+                    NOT_EMPTY     |
+                    VIEW          |
+                    IF <span style="color: #DCDCCC;">(</span>&lt;if_expr&gt;<span style="color: #DCDCCC;">)</span>
+
+&lt;if_expr&gt;     ----&gt; EMPTY         |
+                    NOT_EMPTY
+
+&lt;element&gt;     ----&gt; &lt;int&gt;
+
+&lt;int&gt;         ----&gt; <span style="color: #BFEBBF;">0</span> | <span style="color: #BFEBBF;">1</span> | <span style="color: #BFEBBF;">2</span> | <span style="color: #BFEBBF;">3</span> | <span style="color: #BFEBBF;">4</span> | <span style="color: #BFEBBF;">5</span> | <span style="color: #BFEBBF;">6</span> | <span style="color: #BFEBBF;">7</span> | <span style="color: #BFEBBF;">8</span> | <span style="color: #BFEBBF;">9</span> | <span style="color: #BFEBBF;">10</span>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdb46206">
+<h2 id="orgdb46206">How It Works - Compiled Version</h2>
+<div class="outline-text-2" id="text-orgdb46206">
+</div></section>
+<section id="slide-org83878f4">
+<h3 id="org83878f4">Get The Tokens</h3>
+<ol>
+<li>Read in a text file to a string</li>
+<li>Pass the source code string to Parser.java</li>
+<li>Parser.java finds all the tokens and puts them in an array</li>
+<li>The array is passed back to our main driver</li>
+
+</ol>
+
+</section>
+<section id="slide-orgd5219b5">
+<h4 id="orgd5219b5">Output</h4>
+<pre  class="example">
+############## Parsing.... #################
+Next token is ADD
+Next token is 1
+Next token is ;
+Next token is ADD
+Next token is 5
+Next token is ;
+Next token is ADD
+Next token is 9
+Next token is ;
+Next token is ADD
+Next token is 8
+Next token is ;
+Next token is VIEW
+Next token is ;
+Next token is REMOVE
+Next token is ;
+Next token is VIEW
+Next token is ;
+Next token is PEEK
+Next token is ;
+Next token is LENGTH
+Next token is ;
+Next token is VIEW
+Next token is ;
+Next token is IF
+Next token is (
+Next token is NOT_EMPTY
+Next token is )
+Next token is ;
+Next token is VIEW
+Next token is ;
+Next token is IF
+Next token is (
+Next token is EMPTY
+Next token is )
+Next token is ;
+Next token is VIEW
+Next token is ;
+</pre>
+
+</section>
+<section id="slide-org3702485">
+<h3 id="org3702485">Analyze The Tokens</h3>
+<p>
+This stage combines token analysis and writing to "machine code" (java)
+</p>
+<ol>
+<li>The token array is passed into LexicalAnalyzer.java</li>
+<li>Instructions are converted from our language's tokens to java code to be run</li>
+<li>LexicalAnalyzer writes out a string of java code to a file, including
+<ol>
+<li>The Queue class that will act as our Queue model for our program</li>
+<li>The Main Driver for our compiled program</li>
+<li>Instructions gathered from token analysis</li>
+
+</ol></li>
+<li>The new string of java code is written into output.java</li>
+
+</ol>
+
+</section>
+<section id="slide-org55f2235">
+<h4 id="org55f2235">Output</h4>
+<pre  class="example">
+############## Analyzing.... #################
+Next line of execution: queue.add(1);
+
+Next line of execution: queue.add(5);
+
+Next line of execution: queue.add(9);
+
+Next line of execution: queue.add(8);
+
+Next line of execution: queue.view();
+
+Next line of execution: queue.remove();
+
+Next line of execution: queue.view();
+
+Next line of execution: queue.showFirst((Integer) queue.peek());
+
+Next line of execution: queue.getLength(queue.size());
+
+Next line of execution: queue.view();
+
+Next line of execution: queue.view();
+
+Next line of execution: queue.view();
+</pre>
+
+</section>
+<section id="slide-org1524701">
+<h3 id="org1524701">Compile The Program</h3>
+<ol>
+<li>output.java is compiled to output.class using Runtime.exec().</li>
+<li>output.java is deleted, leaving only output.class</li>
+<li>output.class acts as our executable, the output from our pseudo-compiler</li>
+
+</ol>
+
+</section>
+<section id="slide-org3b88de7">
+<h4 id="org3b88de7">Output</h4>
+<pre  class="example">
+############## Compiling.... #################
+
+
+############## Done! #################
+Your file is compiled. You can run it by running: 
+
+  java output
+
+Happy queueing!
+</pre>
+
+</section>
+<section id="slide-orgfe83264">
+<h3 id="orgfe83264">Use Case Example</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash">$ java Queue myfile.queue 
+$ java output
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org71c9a61">
+<h2 id="org71c9a61">How It Works - Compiled Version</h2>
+<div class="outline-text-2" id="text-org71c9a61">
+</div></section>
+<section id="slide-org9e0c771">
+<h3 id="org9e0c771">All The Steps At Once</h3>
+<ul>
+<li>The logic behind the interpreted version is nearly identical to that of the compiled version.</li>
+
+<li>The major difference is the order in which everything runs</li>
+
+<li>No more separate parsing, analyzing, compiling, and running.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbb6b0fb">
+<h3 id="orgbb6b0fb">The Giant Loop</h3>
+<ul>
+<li>Like the compiled version, our source code is translated into a string an passed to our Interpreter.java</li>
+
+<li>Interpreter has one loop that runs through the source code, parsing, analyzing, and executing as it goes.</li>
+
+<li>Once a token is found, it is analyzed.</li>
+
+<li>If analysis finds an instruction to run, the instruction will be run right away.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
