@@ -40,7 +40,7 @@
    - The line following the IF statement will be evaluated only if the IF statement is true.
 
 * BNF
-  #+BEGIN_SRC bash
+  #+BEGIN_EXAMPLE
 
     <line>        ----> <expression>;
     
@@ -48,8 +48,6 @@
                         REMOVE        |
                         PEEK          |
                         LENGTH        |
-                        EMPTY         |
-                        NOT_EMPTY     |
                         VIEW          |
                         IF (<if_expr>)
     
@@ -60,7 +58,7 @@
     
     <int>         ----> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 
-  #+END_SRC
+  #+END_EXAMPLE
 
 * How It Works - Compiled Version
 
@@ -73,7 +71,7 @@
 
 *** Output
 
-    #+BEGIN_SRC 
+    #+BEGIN_EXAMPLE 
 ############## Parsing.... #################
 Next token is ADD
 Next token is 1
@@ -113,7 +111,7 @@ Next token is )
 Next token is ;
 Next token is VIEW
 Next token is ;
-    #+END_SRC
+    #+END_EXAMPLE
 
 ** Analyze The Tokens
 
@@ -127,7 +125,7 @@ Next token is ;
    4. The new string of java code is written into output.java
 
 *** Output
-    #+BEGIN_SRC
+    #+BEGIN_EXAMPLE
 ############## Analyzing.... #################
 Next line of execution: queue.add(1);
 
@@ -152,7 +150,7 @@ Next line of execution: queue.view();
 Next line of execution: queue.view();
 
 Next line of execution: queue.view();
-    #+END_SRC
+    #+END_EXAMPLE
 
 ** Compile The Program 
 
@@ -162,7 +160,7 @@ Next line of execution: queue.view();
 
 *** Output
 
-    #+BEGIN_SRC
+    #+BEGIN_EXAMPLE
 ############## Compiling.... #################
 
 
@@ -173,14 +171,14 @@ Your file is compiled. You can run it by running:
 
 Happy queueing!
 
-    #+END_SRC
+    #+END_EXAMPLE
 
 ** Use Case Example
 
-   #+BEGIN_SRC bash
+   #+BEGIN_EXAMPLE 
    $ java Queue myfile.queue 
    $ java output
-   #+END_SRC
+   #+END_EXAMPLE
 
 * How It Works - Interpreted Version
 ** All The Steps At Once
