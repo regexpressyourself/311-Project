@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Interpretter {
+public class Interpreter {
     public static List<String> tokenArray;
     public static String       nextToken;
 
@@ -12,11 +12,11 @@ public class Interpretter {
     static QueueImplementation<Integer> queue = new QueueImplementation<Integer>();
     static int ifArgCount = 0;
 
-    public Interpretter() {
+    public Interpreter() {
         this.sourceCode  = "";
         this.sourceArray = sourceCode.toCharArray();
     }
-    public Interpretter(String sourceCode) {
+    public Interpreter(String sourceCode) {
         this.sourceCode  = sourceCode;
         this.sourceArray = sourceCode.toCharArray();
     }

@@ -46,8 +46,8 @@ public class Queue {
         /*
           - Parser/Analyzer/Interpreter -
         */
-        interpretter = new Interpretter(source);
-        tokenArray = interpretter.getTokens();
+        interpreter = new Interpreter(source);
+        tokenArray = interpreter.getTokens();
 
 
 
