@@ -61,7 +61,7 @@ public class Interpreter {
                 if (ignoreNextToken) {
                     // ignoreNextToken is triggered to ignore a semi colon
 
-                    if (nextToken != ";"){
+                    if (!nextToken.equals(";")){
                         syntaxError();
                     }
 
