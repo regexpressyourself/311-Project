@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Queue Programming Language</title>
-<meta name="author" content="(zookeeprr)"/>
+<meta name="author" content="(Sam Messina, Ganesh Koripalli, Mohammed Abdulkadir)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -28,13 +28,14 @@
 <div class="slides">
 
 <section>
-<section id="slide-orgheadline1">
-<h2 id="orgheadline1">The Queue Programming Language</h2>
+<section id="slide-org78be5ba">
+<h2 id="org78be5ba">The Queue Programming Language</h2>
 <p>
 A programming language to allow simple queue manipulation
 </p>
 
 <hr  />
+
 <p>
 Sam Messina
 </p>
@@ -50,16 +51,13 @@ Mohammed Abdulkadir
 </section>
 </section>
 <section>
-<section id="slide-orgheadline2">
-<h2 id="orgheadline2">Features</h2>
+<section id="slide-org41d8bd6">
+<h2 id="org41d8bd6">Features</h2>
 <ol>
 <li>Manipulate a single queue per program</li>
 <li>Queue elements may be integers from 0 - 10</li>
-<li>All major queue methods are implemented
-<ol>
+<li>All major queue methods are implemented</li>
 <li>Two versions of our language: compiled and interpreted</li>
-
-</ol></li>
 <li>Displays parsing and analysis data in real time as it runs</li>
 
 </ol>
@@ -67,56 +65,56 @@ Mohammed Abdulkadir
 </section>
 </section>
 <section>
-<section id="slide-orgheadline11">
-<h2 id="orgheadline11">Available Methods</h2>
-<div class="outline-text-2" id="text-orgheadline11">
+<section id="slide-org0d4e5e2">
+<h2 id="org0d4e5e2">Available Methods</h2>
+<div class="outline-text-2" id="text-org0d4e5e2">
 </div></section>
-<section id="slide-orgheadline3">
-<h3 id="orgheadline3">ADD</h3>
+<section id="slide-org7cf9a47">
+<h3 id="org7cf9a47">ADD</h3>
 <p>
 ADD will add an element to the back of the queue
 </p>
 </section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">REMOVE</h3>
+<section id="slide-orgd122eb3">
+<h3 id="orgd122eb3">REMOVE</h3>
 <p>
 REMOVE will remove an element to the front of the queue
 </p>
 </section>
-<section id="slide-orgheadline5">
-<h3 id="orgheadline5">PEEK</h3>
+<section id="slide-orgce52d75">
+<h3 id="orgce52d75">PEEK</h3>
 <p>
 PEEK will display the element at the front of the queue
 </p>
 </section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">LENGTH</h3>
+<section id="slide-orgf5baba9">
+<h3 id="orgf5baba9">LENGTH</h3>
 <p>
 LENGTH will display the current length of the queue
 </p>
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7">EMPTY</h3>
+<section id="slide-org95d6a97">
+<h3 id="org95d6a97">EMPTY</h3>
 <ul>
 <li>Boolean expression to be placed inside an IF statement.</li>
 <li>Evaluates to true if the queue is empty.</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8">NOT_EMPTY</h3>
+<section id="slide-org44f9507">
+<h3 id="org44f9507">NOT_EMPTY</h3>
 <p>
 Works like EMPTY only evaluates to true if the queue is not empty.
 </p>
 </section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9">VIEW</h3>
+<section id="slide-orge39a1ef">
+<h3 id="orge39a1ef">VIEW</h3>
 <p>
 Shows the queue in its current state
 </p>
 </section>
-<section id="slide-orgheadline10">
-<h3 id="orgheadline10">IF ()</h3>
+<section id="slide-org70145f5">
+<h3 id="org70145f5">IF ()</h3>
 <ul>
 <li>Can only take EMPTY or NOT_EMPTY as an argument.</li>
 <li>The line following the IF statement will be evaluated only if the IF statement is true.</li>
@@ -126,8 +124,8 @@ Shows the queue in its current state
 </section>
 </section>
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12">BNF</h2>
+<section id="slide-org45a0544">
+<h2 id="org45a0544">BNF</h2>
 <pre class="example">
 &lt;line&gt;        ----&gt; &lt;expression&gt;;
 
@@ -149,12 +147,12 @@ Shows the queue in its current state
 </section>
 </section>
 <section>
-<section id="slide-orgheadline20">
-<h2 id="orgheadline20">How It Works - Compiled Version</h2>
-<div class="outline-text-2" id="text-orgheadline20">
+<section id="slide-orgacfb8e7">
+<h2 id="orgacfb8e7">How It Works - Compiled Version</h2>
+<div class="outline-text-2" id="text-orgacfb8e7">
 </div></section>
-<section id="slide-orgheadline14">
-<h3 id="orgheadline14">Get The Tokens</h3>
+<section id="slide-orga64b06d">
+<h3 id="orga64b06d">Get The Tokens</h3>
 <ol>
 <li>Read in a text file to a string</li>
 <li>Pass the source code string to Parser.java</li>
@@ -164,8 +162,8 @@ Shows the queue in its current state
 </ol>
 
 </section>
-<section id="slide-orgheadline13">
-<h4 id="orgheadline13">Output</h4>
+<section id="slide-org682142f">
+<h4 id="org682142f">Output</h4>
 <pre class="example">
 ############## Parsing.... #################
 Next token is ADD
@@ -209,8 +207,8 @@ Next token is ;
 </pre>
 
 </section>
-<section id="slide-orgheadline16">
-<h3 id="orgheadline16">Analyze The Tokens</h3>
+<section id="slide-org014f0b0">
+<h3 id="org014f0b0">Analyze The Tokens</h3>
 <p>
 This stage combines token analysis and writing to "machine code" (java)
 </p>
@@ -229,8 +227,8 @@ This stage combines token analysis and writing to "machine code" (java)
 </ol>
 
 </section>
-<section id="slide-orgheadline15">
-<h4 id="orgheadline15">Output</h4>
+<section id="slide-orga65e0bc">
+<h4 id="orga65e0bc">Output</h4>
 <pre class="example">
 ############## Analyzing.... #################
 Next line of execution: queue.add(1);
@@ -259,8 +257,8 @@ Next line of execution: queue.view();
 </pre>
 
 </section>
-<section id="slide-orgheadline18">
-<h3 id="orgheadline18">Compile The Program</h3>
+<section id="slide-org4ac73f6">
+<h3 id="org4ac73f6">Compile The Program</h3>
 <ol>
 <li>output.java is compiled to output.class using Runtime.exec().</li>
 <li>output.java is deleted, leaving only output.class</li>
@@ -269,8 +267,8 @@ Next line of execution: queue.view();
 </ol>
 
 </section>
-<section id="slide-orgheadline17">
-<h4 id="orgheadline17">Output</h4>
+<section id="slide-orga433a15">
+<h4 id="orga433a15">Output</h4>
 <pre class="example">
 ############## Compiling.... #################
 
@@ -284,8 +282,8 @@ Happy queueing!
 </pre>
 
 </section>
-<section id="slide-orgheadline19">
-<h3 id="orgheadline19">Use Case Example</h3>
+<section id="slide-org39d0fa2">
+<h3 id="org39d0fa2">Use Case Example</h3>
 <pre class="example">
 $ java Queue myfile.queue 
 $ java output
@@ -294,12 +292,12 @@ $ java output
 </section>
 </section>
 <section>
-<section id="slide-orgheadline23">
-<h2 id="orgheadline23">How It Works - Interpreted Version</h2>
-<div class="outline-text-2" id="text-orgheadline23">
+<section id="slide-org96a6ae0">
+<h2 id="org96a6ae0">How It Works - Interpreted Version</h2>
+<div class="outline-text-2" id="text-org96a6ae0">
 </div></section>
-<section id="slide-orgheadline21">
-<h3 id="orgheadline21">All The Steps At Once</h3>
+<section id="slide-org722ada1">
+<h3 id="org722ada1">All The Steps At Once</h3>
 <ul>
 <li>The logic behind the interpreted version is nearly identical to that of the compiled version.</li>
 
@@ -307,21 +305,28 @@ $ java output
 
 <li>No more separate parsing, analyzing, compiling, and running.</li>
 
+<li>A verbose option allows users to see how to program steps through the code.</li>
+
 </ul>
 
 </section>
-<section id="slide-orgheadline22">
-<h3 id="orgheadline22">The Giant Loop</h3>
-<ul>
-<li>Like the compiled version, our source code is translated into a string an passed to our Interpreter.java</li>
-
-<li>Interpreter has one loop that runs through the source code, parsing, analyzing, and executing as it goes.</li>
-
+<section id="slide-orgadd65c8">
+<h3 id="orgadd65c8">The Giant Loop</h3>
+<ol>
+<li>Like the compiled version, our source code is translated into a string.</li>
+<li>The string of Queue Language code is passed to our Interpreter.java</li>
+<li>The Interpreter has one loop that runs through the source code, parsing, analyzing, and executing as it goes.</li>
 <li>Once a token is found, it is analyzed.</li>
+<li>If the analysis finds an instruction to run, the instruction will be run right away.</li>
 
-<li>If analysis finds an instruction to run, the instruction will be run right away.</li>
+</ol>
 
-</ul>
+</section>
+<section id="slide-org85a3085">
+<h3 id="org85a3085">Use Case Example</h3>
+<pre class="example">
+$ java Queue -v myfile.queue
+</pre>
 </section>
 </section>
 </div>
