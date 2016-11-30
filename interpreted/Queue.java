@@ -7,22 +7,38 @@ public class Queue {
         StringBuilder  tempSource ;
         String         line;
         String         source;
+        String         sourceFile;
         String[]       tokenArray;
-        Interpretter   interpretter;
+        Interpreter    interpreter;
+        boolean        verbose;
 
-        source = "";
+        source     = "";
+        sourceFile = "";
+        verbose    = true;
 
-        /* Uncomment to allow user-input source file
-        if (args.length != 1) {
-            System.out.println ("Usage:   Queue [SOURCE_FILE]\n"    +
-                                "example: Queue myfile.queue");
+        if (args.length != 1 && args.length != 2) {
+            System.out.println ("Usage:   Queue [OPTION] SOURCE_FILE\n"    +
+                                "example: Queue -v myfile.queue");
             System.exit(1);
         }
-        */
+        if (args.length == 2) {
+            if (args[0].equals("-v")){
+                verbose    = true;
+                sourceFile = args[1];
+            }
+            else {
+                System.out.println ("Usage:   Queue [OPTION] SOURCE_FILE\n"    +
+                                    "example: Queue -v myfile.queue");
+                System.exit(1);
+            }
+        }
+        else {
+            verbose    = false;
+            sourceFile = args[0];
+        }
 
         try {
-            reader = new BufferedReader(new FileReader("source.queue"));
-            // reader = new BufferedReader(new FileReader(args[0])); Uncomment to allow user-input source file
+            reader     = new BufferedReader(new FileReader(sourceFile)); 
             tempSource = new StringBuilder();
             line       = reader.readLine();
 
@@ -46,7 +62,7 @@ public class Queue {
         /*
           - Parser/Analyzer/Interpreter -
         */
-        interpreter = new Interpreter(source);
+        interpreter = new Interpreter(source, verbose);
         tokenArray = interpreter.getTokens();
 
 

@@ -4,6 +4,7 @@ public class Interpreter {
     public static List<String> tokenArray;
     public static String       nextToken;
 
+    public boolean      verbose;
     public String       sourceCode;
     public char[]       sourceArray;
     public char         currentChar;
@@ -15,10 +16,17 @@ public class Interpreter {
     public Interpreter() {
         this.sourceCode  = "";
         this.sourceArray = sourceCode.toCharArray();
+        this.verbose     = true;
     }
     public Interpreter(String sourceCode) {
         this.sourceCode  = sourceCode;
         this.sourceArray = sourceCode.toCharArray();
+        this.verbose     = true;
+    }
+    public Interpreter(String sourceCode, boolean verbose) {
+        this.sourceCode  = sourceCode;
+        this.sourceArray = sourceCode.toCharArray();
+        this.verbose     = verbose;
     }
 
     public String[] getTokens() {
@@ -56,12 +64,14 @@ public class Interpreter {
 
                 // Once the token is found, analyze it
 
-                System.out.println("Got token " + nextToken);
+                if (verbose){
+                    System.out.println("Got token " + nextToken);
+                }
 
                 if (ignoreNextToken) {
                     // ignoreNextToken is triggered to ignore a semi colon
 
-                    if (nextToken != ";"){
+                    if (!nextToken.equals(";")){
                         syntaxError();
                     }
 
@@ -71,7 +81,7 @@ public class Interpreter {
                         ifArgCount = 0;
                         inIf       = false;
                         executeIf  = false;
-                        System.out.println("-OUT IF-");
+                        if (verbose) {System.out.println("-OUT IF-");}
                     }
                 }
                 else if (inIf) {
@@ -149,7 +159,7 @@ public class Interpreter {
                         break;
                     case "IF":
                         inIf = true;
-                        System.out.println("-IN IF-");
+                        if (verbose) {System.out.println("-IN IF-");}
                         ifArgCount = 0;
                         break;
                     case "CLEAR":
