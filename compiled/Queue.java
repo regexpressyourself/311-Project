@@ -13,17 +13,15 @@ public class Queue {
 
         source = "";
 
-        /* Uncomment to allow user-input source file
         if (args.length != 1) {
             System.out.println ("Usage:   Queue [SOURCE_FILE]\n"    +
                                 "example: Queue myfile.queue");
             System.exit(1);
         }
-        */
 
         try {
-            reader = new BufferedReader(new FileReader("source.queue"));
-            // reader = new BufferedReader(new FileReader(args[0])); Uncomment to allow user-input source file
+            //reader = new BufferedReader(new FileReader("source.queue"));
+            reader = new BufferedReader(new FileReader(args[0])); 
             tempSource = new StringBuilder();
             line       = reader.readLine();
 
