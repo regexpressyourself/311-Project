@@ -11,8 +11,6 @@ public class OurCompiler {
             Process p = null;
             p = Runtime.getRuntime().exec("javac " + sourceFile);
             p.waitFor();
-            p = Runtime.getRuntime().exec("rm " + sourceFile);
-            p.waitFor();
         }
         catch (Exception e) {
         }
