@@ -132,9 +132,15 @@ public class Interpreter {
                     }
                 } // end else if (inIf)
                 else if (addNextToken) {
+                  if (Integer.parseInt(nextToken) >= 0 && Integer.parseInt(nextToken) < 11) {
                     addNextToken    = false;
                     ignoreNextToken = true;
                     queue.add(nextToken);
+                  }
+                  else {
+                    System.err.println("Queue elements must be integers from 0 - 10");
+                    syntaxError();
+                  }
                 }
                 else {
                     switch (nextToken) {
