@@ -29,9 +29,13 @@ public class LexicalAnalyzer{
                 switch (tokenArray[i]) {
                 case "ADD":
                     if (Integer.parseInt(tokenArray[i+1]) >= 0  &&
-                        Integer.parseInt(tokenArray[i+1]) <= 11) {
+                        Integer.parseInt(tokenArray[i+1]) < 11) {
                         javaCode += "queue.add("+Integer.parseInt(tokenArray[++i])+");\n";
                         System.out.println("Next line of execution: queue.add("+Integer.parseInt(tokenArray[i])+");\n");
+                    }
+                    else {
+                    System.err.println("Queue elements must be integers from 0 - 10");
+                    syntaxError();
                     }
                     break;
                 case "REMOVE":
