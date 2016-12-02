@@ -51,11 +51,11 @@ public class Queue {
             source = tempSource.toString();
         }
         catch (FileNotFoundException e) {
-            System.out.println ("FileNotFoundException: cannot find file" + args[1]);
+            System.err.println ("FileNotFoundException: cannot find file " + sourceFile);
             System.exit(1);
         }
         catch (IOException e) {
-            System.out.println ("IOException on file read");
+            System.err.println ("IOException on file read");
             System.exit(1);
         }
 
