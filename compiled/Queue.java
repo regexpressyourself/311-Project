@@ -34,7 +34,7 @@ public class Queue {
             source = tempSource.toString();
         }
         catch (FileNotFoundException e) {
-            System.out.println ("FileNotFoundException: cannot find file" + args[1]);
+            System.out.println ("FileNotFoundException: cannot find file " + args[0]);
             System.exit(1);
         }
         catch (IOException e) {
