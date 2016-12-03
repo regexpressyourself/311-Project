@@ -1,6 +1,7 @@
 ADD 1;
 ADD 5;
 ADD 9;
+ADD 8;
 VIEW;
 REMOVE;
 VIEW;
