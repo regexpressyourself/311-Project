@@ -25,7 +25,7 @@
   4. Two versions of our language: compiled and interpreted
   5. Displays parsing and analysis data in real time as it runs
 
-* Available Methods
+* Available Functionality
 ** ADD
    ADD will add an element to the back of the queue
 ** REMOVE
@@ -123,12 +123,8 @@ Next token is ;
 
    This stage combines token analysis and writing to "machine code" (java)
    1. The token array is passed into LexicalAnalyzer.java
-   2. Instructions are converted from our language's tokens to java code to be run 
-   3. LexicalAnalyzer writes out a string of java code to a file, including
-      1. The Queue class that will act as our Queue model for our program
-      2. The Main Driver for our compiled program
-      3. Instructions gathered from token analysis
-   4. The new string of java code is written into output.java
+   2. Tokens are converted from our Q Language code to java code
+   3. The java code is written to output.java
 
 *** Output
     #+BEGIN_EXAMPLE
@@ -203,6 +199,67 @@ Happy queueing!
    4. Once a token is found, it is analyzed. 
    5. If the analysis finds an instruction to run, the instruction will be run right away.
 
+** Verbose Option
+   Adding -v before the source file will display the parsing data along with the runtime data.
+   #+BEGIN_EXAMPLE
+Got token ADD
+Got token 1
+Got token ;
+Got token ADD
+Got token 5
+Got token ;
+Got token ADD
+Got token 9
+Got token ;
+Got token ADD
+Got token 8
+Got token ;
+Got token VIEW
+1 <- 5 <- 9 <- 8 <- 
+Got token ;
+Got token REMOVE
+Got token ;
+Got token VIEW
+5 <- 9 <- 8 <- 
+Got token ;
+Got token PEEK
+The first element is: 5
+Got token ;
+Got token LENGTH
+The length is: 3
+Got token ;
+Got token VIEW
+5 <- 9 <- 8 <- 
+Got token ;
+Got token IF
+-IN IF-
+Got token (
+Got token NOT_EMPTY
+Got token )
+Got token ;
+Got token VIEW
+5 <- 9 <- 8 <- 
+Got token ;
+-OUT IF-
+Got token IF
+-IN IF-
+Got token (
+Got token EMPTY
+Got token )
+Got token ;
+Got token VIEW
+Got token ;
+   #+END_EXAMPLE
+** Non-Verbose Option
+Without the -v option, the program will only display what was requested in the source file:
+   #+BEGIN_EXAMPLE
+1 <- 5 <- 9 <- 8 <- 
+5 <- 9 <- 8 <- 
+The first element is: 5
+The length is: 3
+5 <- 9 <- 8 <- 
+5 <- 9 <- 8 <- 
+   #+END_EXAMPLE
 ** Use Case Example
 
    #+BEGIN_EXAMPLE 
