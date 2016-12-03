@@ -9,14 +9,6 @@
 
   A programming language to allow simple queue manipulation
 
-  --------------------------------
-
-  Sam Messina
-
-  Ganesh Koripalli
-
-  Mohammed Abdulkadir
-
 * Features
   1. Manipulate a single queue per program
   2. Queue elements may be integers from 0 - 10
