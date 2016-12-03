@@ -6,7 +6,6 @@
 #+REVEAL_TRANS:linear
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 
-* The Q Programming Language
 
   A programming language to allow simple queue manipulation
 
