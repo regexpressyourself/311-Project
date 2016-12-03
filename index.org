@@ -161,8 +161,7 @@ Next line of execution: queue.view();
 ** Compile The Program 
 
    1. output.java is compiled to output.class using Runtime.exec().
-   2. output.java is deleted, leaving only output.class
-   3. output.class acts as our executable, the output from our pseudo-compiler
+   2. output.class acts as our executable, the output from our pseudo-compiler
 
 *** Output
 
