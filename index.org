@@ -1,12 +1,12 @@
 #+OPTIONS: num:nil reveal_title_slide:nil TOC:nil ^:nil 
-#+TITLE: Queue Programming Language
+#+TITLE: Q Programming Language
 #+AUTHOR: Sam Messina, Ganesh Koripalli, Mohammed Abdulkadir
 #+DATE: 
 #+REVEAL_THEME:blood
 #+REVEAL_TRANS:linear
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 
-* The Queue Programming Language
+* The Q Programming Language
 
   A programming language to allow simple queue manipulation
 
@@ -198,7 +198,7 @@ Happy queueing!
 ** The Giant Loop
 
    1. Like the compiled version, our source code is translated into a string.
-   2. The string of Queue Language code is passed to our Interpreter.java
+   2. The string of Q Language code is passed to our Interpreter.java
    3. The Interpreter has one loop that runs through the source code, parsing, analyzing, and executing as it goes.
    4. Once a token is found, it is analyzed. 
    5. If the analysis finds an instruction to run, the instruction will be run right away.
