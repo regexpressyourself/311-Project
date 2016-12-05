@@ -74,6 +74,7 @@ public class Queue {
 
         // instantiate Interpreter with source String and verbose option
         interpreter = new Interpreter(source, verbose);
+        interpreter.getTokens();
 
 
 
