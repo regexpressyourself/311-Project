@@ -85,6 +85,9 @@ public class LexicalAnalyzer{
                     // skip semi colons
                     i += 1;
                 }
+                else {
+                  syntaxError();
+                }
             } // end for
 
             javaCode += "}\n"; // close out the Main Driver
