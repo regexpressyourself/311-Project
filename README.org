@@ -5,8 +5,9 @@
 #+REVEAL_TRANS:linear
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 
-#+attr_html: :width 100px
+#+ATTR_ORG: :width 100
 [[documents/QLanguage.png]]
+
 * Q Programming Language
 
   A programming language to allow simple queue manipulation
