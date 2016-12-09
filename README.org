@@ -5,6 +5,7 @@
 #+REVEAL_TRANS:linear
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 
+#+attr_html: :width 100px
 [[documents/QLanguage.png]]
 * Q Programming Language
 
