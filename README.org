@@ -1,11 +1,12 @@
 #+OPTIONS: num:nil reveal_title_slide:nil TOC:nil ^:nil 
-#+TITLE: Q Programming Language
 #+AUTHOR: Sam Messina, Ganesh Koripalli, Mohammed Abdulkadir
 #+DATE: 
 #+REVEAL_THEME:blood
 #+REVEAL_TRANS:linear
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 
+[[documents/QLanguage.png]]
+* Q Programming Language
 
   A programming language to allow simple queue manipulation
 
