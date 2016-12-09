@@ -1,27 +1,33 @@
 import java.util.*;
 import java.io.*;
 public class Queue {
+    /**
+     * Queue class is our main driver
+     */
+
     public static void main(String[] args) {
 
-        BufferedReader reader;
-        StringBuilder  tempSource ;
-        String         line;
-        String         source;
-        String         sourceFile;
-        String[]       tokenArray;
-        Interpreter    interpreter;
-        boolean        verbose;
+        BufferedReader reader;      // reader for our source code
+        StringBuilder  tempSource;  // mutable version of source string
+        String         line;        // holds current line while source is read
+        String[]       tokenArray;  // array of tokens returned by Parser.java
+        String         source;      // the source itself
+        String         sourceFile;  // the name of the .queue file
+        Interpreter    interpreter; // the interpreter class
+        boolean        verbose;     // verbose option 
 
         source     = "";
         sourceFile = "";
-        verbose    = true;
+        verbose    = true; // runs verbose by default
 
         if (args.length != 1 && args.length != 2) {
+            // check for correct arguments
             System.out.println ("Usage:   Queue [OPTION] SOURCE_FILE\n"    +
                                 "example: Queue -v myfile.queue");
             System.exit(1);
         }
         if (args.length == 2) {
+            // check if verbose is specified
             if (args[0].equals("-v")){
                 verbose    = true;
                 sourceFile = args[1];
@@ -33,11 +39,13 @@ public class Queue {
             }
         }
         else {
+            // no verbose
             verbose    = false;
             sourceFile = args[0];
         }
 
         try {
+            // read in source code
             reader     = new BufferedReader(new FileReader(sourceFile)); 
             tempSource = new StringBuilder();
             line       = reader.readLine();
@@ -51,19 +59,22 @@ public class Queue {
             source = tempSource.toString();
         }
         catch (FileNotFoundException e) {
-            System.out.println ("FileNotFoundException: cannot find file" + args[1]);
+            // cannot find source file specified
+            System.err.println ("FileNotFoundException: cannot find file " + sourceFile);
             System.exit(1);
         }
         catch (IOException e) {
-            System.out.println ("IOException on file read");
+            System.err.println ("IOException on file read");
             System.exit(1);
         }
 
         /*
           - Parser/Analyzer/Interpreter -
         */
+
+        // instantiate Interpreter with source String and verbose option
         interpreter = new Interpreter(source, verbose);
-        tokenArray = interpreter.getTokens();
+        interpreter.getTokens();
 
 
 
