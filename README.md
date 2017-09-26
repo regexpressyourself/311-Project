@@ -1,46 +1,38 @@
-#+OPTIONS: num:nil reveal_title_slide:nil TOC:nil ^:nil 
-#+AUTHOR: Sam Messina, Ganesh Koripalli, Mohammed Abdulkadir
-#+DATE: 
-#+REVEAL_THEME:blood
-#+REVEAL_TRANS:linear
-#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
-
-#+ATTR_ORG: :width 100
 <img src="./documents/QLanguage.png" align="right" />
 
-* Q Programming Language
+# Q Programming Language
 
   A programming language to allow simple queue manipulation
 
-* Features
+# Features
   1. Manipulate a single queue per program
   2. Queue elements may be integers from 0 - 10
   3. All major queue methods are implemented
   4. Two versions of our language: compiled and interpreted
   5. Displays parsing and analysis data in real time as it runs
 
-* Available Functionality
-** ADD
+# Available Functionality
+## ADD
    ADD will add an element to the back of the queue
-** REMOVE
+## REMOVE
    REMOVE will remove an element to the front of the queue
-** PEEK
+## PEEK
    PEEK will display the element at the front of the queue
-** LENGTH
+## LENGTH
    LENGTH will display the current length of the queue
-** EMPTY
+## EMPTY
    - Boolean expression to be placed inside an IF statement. 
    - Evaluates to true if the queue is empty.
-** NOT_EMPTY
+## NOT_EMPTY
    Works like EMPTY only evaluates to true if the queue is not empty.
-** VIEW
+## VIEW
    Shows the queue in its current state
-** IF ()
+## IF ()
    - Can only take EMPTY or NOT_EMPTY as an argument. 
    - The line following the IF statement will be evaluated only if the IF statement is true.
 
-* BNF
-  #+BEGIN_EXAMPLE
+# BNF
+```
 
     <line>        ----> <expression>;
     
@@ -58,20 +50,20 @@
     
     <int>         ----> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 
-  #+END_EXAMPLE
+```
 
-* How It Works - Compiled Version
+# How It Works - Compiled Version
 
-** Get The Tokens
+## Get The Tokens
 
    1. Read in a text file to a string
    2. Pass the source code string to Parser.java
    3. Parser.java finds all the tokens and puts them in an array
    4. The array is passed back to our main driver
 
-*** Output
+### Output
 
-    #+BEGIN_EXAMPLE 
+```
 ############## Parsing.... #################
 Next token is ADD
 Next token is 1
@@ -111,17 +103,17 @@ Next token is )
 Next token is ;
 Next token is VIEW
 Next token is ;
-    #+END_EXAMPLE
+```
 
-** Analyze The Tokens
+## Analyze The Tokens
 
    This stage combines token analysis and writing to "machine code" (java)
    1. The token array is passed into LexicalAnalyzer.java
    2. Tokens are converted from our Q Language code to java code
    3. The java code is written to output.java
 
-*** Output
-    #+BEGIN_EXAMPLE
+### Output
+```
 ############## Analyzing.... #################
 Next line of execution: queue.add(1);
 
@@ -146,16 +138,16 @@ Next line of execution: queue.view();
 Next line of execution: queue.view();
 
 Next line of execution: queue.view();
-    #+END_EXAMPLE
+```
 
-** Compile The Program 
+## Compile The Program 
 
    1. output.java is compiled to output.class using Runtime.exec().
    2. output.class acts as our executable, the output from our pseudo-compiler
 
-*** Output
+### Output
 
-    #+BEGIN_EXAMPLE
+```
 ############## Compiling.... #################
 
 
@@ -166,17 +158,17 @@ Your file is compiled. You can run it by running:
 
 Happy queueing!
 
-    #+END_EXAMPLE
+```
 
-** Use Case Example
+## Use Case Example
 
-   #+BEGIN_EXAMPLE 
+```
    $ java Queue myfile.queue 
    $ java output
-   #+END_EXAMPLE
+```
 
-* How It Works - Interpreted Version
-** All The Steps At Once
+# How It Works - Interpreted Version
+## All The Steps At Once
    - The logic behind the interpreted version is nearly identical to that of the compiled version.
 
    - The major difference is the order in which everything runs
@@ -185,7 +177,7 @@ Happy queueing!
 
    - A verbose option allows users to see how to program steps through the code.
 
-** The Giant Loop
+## The Giant Loop
 
    1. Like the compiled version, our source code is translated into a string.
    2. The string of Q Language code is passed to our Interpreter.java
@@ -193,9 +185,9 @@ Happy queueing!
    4. Once a token is found, it is analyzed. 
    5. If the analysis finds an instruction to run, the instruction will be run right away.
 
-** Verbose Option
+## Verbose Option
    Adding -v before the source file will display the parsing data along with the runtime data.
-   #+BEGIN_EXAMPLE
+```
 Got token ADD
 Got token 1
 Got token ;
@@ -243,19 +235,19 @@ Got token )
 Got token ;
 Got token VIEW
 Got token ;
-   #+END_EXAMPLE
-** Non-Verbose Option
+```
+## Non-Verbose Option
 Without the -v option, the program will only display what was requested in the source file:
-   #+BEGIN_EXAMPLE
+```
 1 <- 5 <- 9 <- 8 <- 
 5 <- 9 <- 8 <- 
 The first element is: 5
 The length is: 3
 5 <- 9 <- 8 <- 
 5 <- 9 <- 8 <- 
-   #+END_EXAMPLE
-** Use Case Example
+```
+## Use Case Example
 
-   #+BEGIN_EXAMPLE 
+```
    $ java Queue -v myfile.queue 
-   #+END_EXAMPLE
+```
