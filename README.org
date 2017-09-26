@@ -6,7 +6,7 @@
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 
 #+ATTR_ORG: :width 100
-[[documents/QLanguage.png]]
+<img src="./documents/QLanguage.png" align="right" />
 
 * Q Programming Language
 
